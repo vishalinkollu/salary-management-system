@@ -4,10 +4,8 @@ import {
     Typography,
     Box
 } from "@mui/material";
-
 import api from "../../services/axios";
 import useDebounce from "../../hooks/useDebounce";
-
 import EmployeeToolbar from "./EmployeeToolbar";
 import EmployeeTable from "./EmployeeTable";
 
@@ -29,23 +27,12 @@ function Employees() {
     const [status, setStatus] = useState("");
 
     useEffect(() => {
-
         fetchEmployees();
-
-    }, [
-        page,
-        debouncedSearch,
-        country,
-        department,
-        status
-    ]);
+    }, [page,debouncedSearch,country,department,status]);
 
     const fetchEmployees = async () => {
-
         setLoading(true);
-
         try {
-
             const response = await api.get(
                 "/employees",
                 {
@@ -61,37 +48,25 @@ function Employees() {
             );
 
             setEmployees(response.data.data);
-
             setPagination(
                 response.data.pagination
             );
-
         }
-
         catch (error) {
-
             console.error(error);
-
         }
-
         finally {
-
             setLoading(false);
-
         }
-
     };
 
     return (
-
         <>
-
             <Box
                 sx={{
                     mb: 1
                 }}
             >
-
                 <Typography
                     sx={{
                         fontSize: "2rem",
@@ -135,11 +110,8 @@ function Employees() {
                 page={page}
                 setPage={setPage}
             />
-
         </>
-
     );
-
 }
 
 export default Employees;

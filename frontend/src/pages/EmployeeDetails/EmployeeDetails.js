@@ -26,10 +26,8 @@ function EmployeeDetails() {
     const [employee, setEmployee] = useState(null);
 
     useEffect(() => {
-
         fetchEmployee();
-
-    }, []);
+    }, [id]);
 
     const fetchEmployee = async () => {
 

@@ -1,7 +1,6 @@
 import {Drawer,List,ListItem,ListItemButton,ListItemIcon,ListItemText } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleIcon from "@mui/icons-material/People";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
 import { Link, useLocation } from "react-router-dom";
 
 const drawerWidth = 220;

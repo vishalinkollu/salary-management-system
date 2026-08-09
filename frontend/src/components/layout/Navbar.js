@@ -1,4 +1,4 @@
-import {AppBar,Toolbar,Typography,Box,Avatar} from "@mui/material";
+import {AppBar,Toolbar,Typography,Box} from "@mui/material";
 import Groups2Icon from "@mui/icons-material/Groups2";
 
 function Navbar() {

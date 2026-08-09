@@ -32,12 +32,11 @@ function EmployeeForm({
 
     const [errors, setErrors] = useState({});
 
+   // eslint-disable-next-line react-hooks/exhaustive-deps    
     useEffect(() => {
-
         if (!initialValues?.employeeCode) {
             return;
         }
-
         setFormData({
             employeeCode: initialValues.employeeCode || "",
             firstName: initialValues.firstName || "",

@@ -1,5 +1,4 @@
 import {
-    Grid,
     Box,
     Paper,
     Pagination,

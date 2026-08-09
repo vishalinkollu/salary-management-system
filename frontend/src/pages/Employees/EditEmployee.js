@@ -9,6 +9,7 @@ function EditEmployee() {
     const navigate = useNavigate();
     const [employee, setEmployee] = useState(null);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         loadEmployee();
     }, []);
