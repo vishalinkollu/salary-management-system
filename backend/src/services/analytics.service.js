@@ -11,6 +11,30 @@ const getDashboard = async () => {
     };
 };
 
+const getCountrySummary = async () => {
+    const countries = await analyticsRepository.getCountrySummary();
+    return {
+        success: true,
+        data: countries.map(country => ({
+            country: country.name,
+            employees: country._count.employees
+        }))
+    };
+};
+
+const getDepartmentSummary = async () => {
+    const departments = await analyticsRepository.getDepartmentSummary();
+    return {
+        success: true,
+        data: departments.map(department => ({
+            department: department.name,
+            employees: department._count.employees
+        }))
+    };
+};
+
 module.exports = {
-    getDashboard
+    getDashboard,
+    getCountrySummary,
+    getDepartmentSummary
 };

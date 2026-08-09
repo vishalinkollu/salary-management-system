@@ -1,0 +1,43 @@
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    box-shadow:
+    0 4px 18px rgba(0,0,0,.05);
+
+    transition:.25s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.dashboard-card h2{
+
+    font-size:34px;
+
+}
+
+.dashboard-card p{
+
+    color:#64748B;
+
+}

@@ -9,8 +9,8 @@ const getDashboardStats = async () => {
         departments,
         salaryStats
     ] = await Promise.all([
-        prisma.employee.count(),
 
+        prisma.employee.count(),
         prisma.employee.count({
             where: {
                 status: "ACTIVE"
@@ -24,9 +24,7 @@ const getDashboardStats = async () => {
         }),
 
         prisma.country.count(),
-
         prisma.department.count(),
-
         prisma.employee.aggregate({
             _sum: {
                 currentSalary: true
@@ -56,6 +54,36 @@ const getDashboardStats = async () => {
     };
 };
 
+const getCountrySummary = async () => {
+
+    return prisma.country.findMany({
+        select: {
+            name: true,
+            _count: {
+                select: {
+                    employees: true
+                }
+            }
+        }
+    });
+};
+
+const getDepartmentSummary = async () => {
+
+    return prisma.department.findMany({
+        select: {
+            name: true,
+            _count: {
+                select: {
+                    employees: true
+                }
+            }
+        }
+    });
+};
+
 module.exports = {
-    getDashboardStats
+    getDashboardStats,
+    getCountrySummary,
+    getDepartmentSummary
 };

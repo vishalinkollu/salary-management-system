@@ -1,0 +1,32 @@
+.form-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:35px;
+
+    box-shadow:
+    0 4px 18px rgba(0,0,0,.05);
+
+}
+
+.form-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:30px;
+
+}
+
+.submit-btn{
+
+    margin-top:25px;
+
+}

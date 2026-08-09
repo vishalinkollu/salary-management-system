@@ -24,20 +24,15 @@ model Country {
   currencyCode   String
   currencySymbol String
   exchangeRate   Float
-
   employees Employee[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Department {
   id Int @id @default(autoincrement())
-
   name String @unique
-
   employees Employee[]
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -45,55 +40,32 @@ model Department {
 model Employee {
 
   id Int @id @default(autoincrement())
-
   employeeCode String @unique
-
   firstName String
-
   lastName String
-
   email String @unique
-
   phone String
-
   gender Gender
-
   joiningDate DateTime
-
   currentSalary Float
-
   status EmployeeStatus @default(ACTIVE)
-
   countryId Int
-
   departmentId Int
-
   country Country @relation(fields: [countryId], references: [id])
-
   department Department @relation(fields: [departmentId], references: [id])
-
   salaryHistory SalaryHistory[]
-
   createdAt DateTime @default(now())
-
   updatedAt DateTime @updatedAt
 }
 
 model SalaryHistory {
 
   id Int @id @default(autoincrement())
-
   employeeId Int
-
   salary Float
-
   currency String
-
   effectiveFrom DateTime
-
   remarks String?
-
   employee Employee @relation(fields: [employeeId], references: [id])
-
   createdAt DateTime @default(now())
 }
